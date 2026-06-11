@@ -6,6 +6,10 @@
 </head>
 <body>
     <h2>Criar Nova Conta</h2>
+    
+    <!-- Esta linha abaixo exibe o erro se ele existir -->
+    {% if erro %}<p style="color: red;">{{ erro }}</p>{% endif %}
+    
     <form action="/auth/cadastro" method="post">
         <input type="email" name="email" placeholder="E-mail" required><br><br>
         <input type="password" name="senha" placeholder="Senha" required><br><br>
