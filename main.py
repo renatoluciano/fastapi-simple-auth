@@ -61,3 +61,9 @@ def processar_login(request: Request, email: str = Form(...), senha: str = Form(
     
     # 3. Se tudo estiver certo, redireciona para a página de sucesso (Dashboard)
     return RedirectResponse(url="/dashboard", status_code=303)
+
+# Rota que processa o encerramento da sessão
+@app.get("/auth/logout")
+def processar_logout():
+    # Como não estamos usando cookies ainda, apenas redirecionamos para o login
+    return RedirectResponse(url="/login", status_code=303)
